@@ -15,9 +15,9 @@ class CreateHallsTable extends Migration
     {
         Schema::create('halls', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 32);
-            $table->integer('rows_count')->default(0);
-            $table->integer('seats_count')->default(0);
+            $table->string('title', 32)->unique();
+            $table->smallInteger('rows_count')->default(0)->unsigned();
+            $table->smallInteger('seats_count')->default(0)->unsigned();
             $table->timestamps();
         });
     }

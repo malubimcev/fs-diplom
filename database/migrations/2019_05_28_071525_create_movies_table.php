@@ -18,7 +18,7 @@ class CreateMoviesTable extends Migration
             $table->string('title', 32);
             $table->dateTime('duration_time');
             $table->text('description');
-            $table->string('image_link', 250);
+            $table->string('image_link', 255);
             $table->timestamps();
         });
     }

@@ -15,10 +15,12 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('hall_id')->default(0);
-            $table->integer('movie_id')->default(0);
+            $table->integer('hall_id')->unsigned();
+            $table->integer('movie_id')->unsigned();
             $table->dateTime('start_time');
             $table->timestamps();
+            $table->foreign('hall_id')->references('id')->on('halls')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

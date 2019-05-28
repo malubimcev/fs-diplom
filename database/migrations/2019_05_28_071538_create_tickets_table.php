@@ -15,11 +15,13 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('session_id')->default(0);
-            $table->integer('seat_id')->default(0);
+            $table->integer('session_id')->unsigned();
+            $table->integer('seat_id')->unsigned();
             $table->double('price')->default(0);
             $table->string('qr_code');
             $table->timestamps();
+            $table->foreign('session_id')->references('id')->on('sessions')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('seat_id')->references('id')->on('seats')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
