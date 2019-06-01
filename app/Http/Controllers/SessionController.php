@@ -14,6 +14,7 @@ class SessionController extends Controller
     public function index()
     {
         //
+        return '<h1>SESSIONS</h1>';
     }
 
     /**

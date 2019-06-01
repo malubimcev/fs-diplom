@@ -14,6 +14,7 @@ class MovieController extends Controller
     public function index()
     {
         //
+        return '<h1>MOVIES</h1>';
     }
 
     /**
