@@ -12,7 +12,7 @@
         <input type="e-mail" class="auth-form__input" placeholder="E-mail"/>
         <input type="password" class="auth-form__input" placeholder="пароль"/>
         <button class="acceptin-button" onclick="location.href='index.html'">
-        Войти
+            Войти
         </button>
     </form>
     </div>
