@@ -430,3 +430,13 @@ body {
     display: none;
   }
 }
+
+.auth-form__input {
+  display: block;
+  width: 300px;
+  margin: 5px auto 5px;
+  padding: 8px;
+  font-size: 2rem;
+  color: #000000;
+  border: 1px solid #b7b7b7;
+}

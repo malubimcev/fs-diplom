@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin');
 });
+
+Route::resource('halls', 'HallController');
+Route::resource('movies', 'MovieController');
+Route::resource('sessions', 'SessionController');
+Route::resource('tickets', 'TicketController');
