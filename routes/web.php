@@ -19,3 +19,7 @@ Route::resource('halls', 'HallController');
 Route::resource('movies', 'MovieController');
 Route::resource('sessions', 'SessionController');
 Route::resource('tickets', 'TicketController');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('tickets', 'TicketController');
+});
