@@ -14,9 +14,12 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
+<<<<<<< HEAD
         <div id="app">
             
         </div>
+=======
+>>>>>>> 2484ee001db7751e4b970fc9474193fcb05de524
         @if (Route::has('login'))
             <div class="conf-step__paragraph">
                 @auth
