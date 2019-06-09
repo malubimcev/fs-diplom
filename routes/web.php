@@ -12,11 +12,7 @@
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return view('admin');
-=======
-    return view('index');
->>>>>>> 2484ee001db7751e4b970fc9474193fcb05de524
 });
 
 Route::resource('halls', 'HallController');
