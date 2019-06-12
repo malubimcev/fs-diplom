@@ -17,8 +17,10 @@ Route::get('/', function () {
 
 Route::resource('halls', 'HallController');
 Route::resource('movies', 'MovieController');
-Route::resource('sessions', 'SessionController');
+Route::resource('shows', 'ShowController');
 Route::resource('tickets', 'TicketController');
+Route::resource('seats', 'SeatController');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('tickets', 'TicketController');

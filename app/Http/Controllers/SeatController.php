@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Seat;
 
 class SeatController extends Controller
 {
@@ -13,7 +14,8 @@ class SeatController extends Controller
      */
     public function index()
     {
-        //
+        // return Seat::all();
+        
     }
 
     /**

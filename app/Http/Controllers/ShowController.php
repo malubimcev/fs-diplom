@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Show;
 
-class SessionController extends Controller
+class ShowController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,8 @@ class SessionController extends Controller
      */
     public function index()
     {
-        //
-        return '<h1>SESSIONS</h1>';
+        // return Show::all();
+        return 'all shows';//test
     }
 
     /**

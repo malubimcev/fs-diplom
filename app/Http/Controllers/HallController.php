@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Hall;
 
 class HallController extends Controller
 {
@@ -14,7 +15,8 @@ class HallController extends Controller
     public function index()
     {
         //
-        return view('admin');//'<h1>HALLS</h1>';
+        // return Hall::all();
+        return 'all halls';//test
     }
 
     /**
@@ -46,7 +48,10 @@ class HallController extends Controller
      */
     public function show($id)
     {
-        //
+        // $hall = Hall::find($id);
+        $hall = 'show hall id=' . $id;//test
+
+        return $hall;
     }
 
     /**
