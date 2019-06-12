@@ -20,8 +20,8 @@ class CreateTicketsTable extends Migration
             $table->double('price')->default(0);
             $table->string('qr_code');
             $table->timestamps();
-            $table->foreign('session_id')->references('id')->on('sessions')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('seat_id')->references('id')->on('seats')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('session_id')->references('id')->on('sessions')->onDelete('cascade');//->onUpdate('cascade');
+            $table->foreign('seat_id')->references('id')->on('seats')->onDelete('cascade');//->onUpdate('cascade');
         });
     }
 

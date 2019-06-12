@@ -18,9 +18,9 @@ class CreateSeatsTable extends Migration
             $table->integer('hall_id')->unsigned();
             $table->smallInteger('number')->default(1);
             $table->smallInteger('row_number')->default(1);
-            $table->boolean('is_vip')->default('false');
+            $table->boolean('is_vip');//->default('false');
             $table->timestamps();
-            $table->foreign('hall_id')->references('id')->on('halls')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('hall_id')->references('id')->on('halls')->onDelete('cascade');//->onUpdate('cascade');
         });
     }
 
