@@ -15,8 +15,8 @@ class MovieController extends Controller
     public function index()
     {
         //
-        // return Movie::all();
-        return 'all movies';//test
+        return Movie::all();
+        // return 'all movies';//test
     }
 
     /**
@@ -48,8 +48,8 @@ class MovieController extends Controller
      */
     public function show($id)
     {
-        // $movie = Movie::find($id);
-        $movie = 'show movie id=' . $id;//test
+        $movie = Movie::find($id);
+        // $movie = 'show movie id=' . $id;//test
 
         return $movie;
     }

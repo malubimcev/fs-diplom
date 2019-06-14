@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin');
+    return view('auth');
 });
 
 Route::resource('halls', 'HallController');
