@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShowsTable extends Migration
+class CreateSeancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateShowsTable extends Migration
      */
     public function up()
     {
-        Schema::create('shows', function (Blueprint $table) {
+        Schema::table('seances', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('hall_id')->unsigned();
             $table->integer('movie_id')->unsigned();
@@ -31,6 +31,8 @@ class CreateShowsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shows');
+        Schema::table('seances', function (Blueprint $table) {
+            //
+        });
     }
 }
