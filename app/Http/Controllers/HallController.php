@@ -15,8 +15,8 @@ class HallController extends Controller
     public function index()
     {
         //
-        // return Hall::all();
-        return 'all halls';//test
+        $allhalls = Hall::all();
+        return view('halls', compact('allhalls'));
     }
 
     /**
@@ -48,8 +48,8 @@ class HallController extends Controller
      */
     public function show($id)
     {
-        // $hall = Hall::find($id);
-        $hall = 'show hall id=' . $id;//test
+        $hall = Hall::find($id);
+        // $hall = 'show hall id=' . $id;//test
 
         return $hall;
     }

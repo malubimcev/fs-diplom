@@ -12,7 +12,7 @@ class CreateTicketsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('seance_id')->unsigned();

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Show;
+use App\Seance;
 
-class ShowController extends Controller
+class SeanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class ShowController extends Controller
      */
     public function index()
     {
-        // return Show::all();
-        return 'all shows';//test
+        return Seance::all();
     }
 
     /**

@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Show extends Model
+class Seance extends Model
 {
     protected $fillable = ['hall_id', 'movie_id', 'start_time'];
-    protected $table = 'shows';
+    protected $table = 'seances';
 
     public function tickets() {
         return $this->hasMany('App\Ticket', 'ticket_id', 'id');

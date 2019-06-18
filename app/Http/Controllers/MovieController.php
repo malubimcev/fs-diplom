@@ -49,7 +49,6 @@ class MovieController extends Controller
     public function show($id)
     {
         $movie = Movie::find($id);
-        // $movie = 'show movie id=' . $id;//test
 
         return $movie;
     }

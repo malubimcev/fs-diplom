@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('auth');
+    return view('index');
 });
 
 Route::resource('halls', 'HallController');
 Route::resource('movies', 'MovieController');
-Route::resource('shows', 'ShowController');
+Route::resource('seances', 'SeanceController');
 Route::resource('tickets', 'TicketController');
 Route::resource('seats', 'SeatController');
 

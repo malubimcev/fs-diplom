@@ -31,8 +31,6 @@ class CreateSeancesTable extends Migration
      */
     public function down()
     {
-        Schema::table('seances', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('seances');
     }
 }
