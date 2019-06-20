@@ -13,7 +13,7 @@ class CreateSeancesTable extends Migration
      */
     public function up()
     {
-        Schema::table('seances', function (Blueprint $table) {
+        Schema::create('seances', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('hall_id')->unsigned();
             $table->integer('movie_id')->unsigned();
