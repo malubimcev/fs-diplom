@@ -10,7 +10,7 @@ class Ticket extends Model
     protected $table = 'tickets';
 
     public function session() {
-        return $this->belongsTo('App\Session', 'session_id', 'id');
+        return $this->belongsTo('App\Seance', 'seance_id', 'id');
     }
 
     public function seat() {

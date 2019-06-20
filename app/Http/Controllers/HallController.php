@@ -48,8 +48,7 @@ class HallController extends Controller
      */
     public function show($id)
     {
-        $hall = Hall::find($id);
-        // $hall = 'show hall id=' . $id;//test
+        $hall = Hall::findOrFail($id);
 
         return $hall;
     }
