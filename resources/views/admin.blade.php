@@ -28,14 +28,8 @@
                     @endauth
                 </div>
             @else
-                <h2>no login</h2>
+                @include('client');
             @endif
-
-            <div class="conf-steps">
-                <div class="conf-step__paragraph">
-                    HALLS
-                </div>
-            </div>
         </div>
     </body>
 </html>

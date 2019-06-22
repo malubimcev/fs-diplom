@@ -22,6 +22,6 @@ Route::resource('tickets', 'TicketController');
 Route::resource('seats', 'SeatController');
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Route::resource('tickets', 'TicketController');
-});
+// Route::group(['prefix' => 'admin'], function () {
+//     Route::resource('tickets', 'TicketController');
+// });
