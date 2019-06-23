@@ -19,7 +19,7 @@ class CreateSeatsTable extends Migration
             $table->smallInteger('number')->default(1);
             $table->smallInteger('row_number')->default(1);
             $table->boolean('is_vip')->default(false);
-            $table->timestamps('created_at')->nullable();
+            $table->timestamps();
             $table->foreign('hall_id')->references('id')->on('halls')->onDelete('cascade');//->onUpdate('cascade');
         });
     }

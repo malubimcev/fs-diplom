@@ -17,8 +17,8 @@ class CreateSeancesTable extends Migration
             $table->increments('id');
             $table->integer('hall_id')->unsigned()->default(0);
             $table->integer('movie_id')->unsigned()->default(0);
-            $table->dateTime('start_time')->default(0);
-            $table->timestamps('created_at')->nullable();
+            $table->dateTime('start_time')->nullable();
+            $table->timestamps();
             $table->foreign('hall_id')->references('id')->on('halls')->onDelete('cascade');//->onUpdate('cascade');
             $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');//->onUpdate('cascade');
         });
