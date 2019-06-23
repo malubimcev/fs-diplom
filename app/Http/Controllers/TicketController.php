@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Ticket;
+use Faker\Generator;
 
 class TicketController extends Controller
 {
@@ -22,9 +24,12 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Generator $faker)
     {
-        //
+        $ticket = new Ticket();
+
+        $ticket->save();
+        return response($ticket->jsonSerialize(), Response::HTTP_CREATED);
     }
 
     /**
@@ -35,7 +40,9 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        $ticket = Ticket::create($request->all());
+        // $ticket = Ticket::create($request->all());
+        $ticket = Ticket::create();
+        
         return $ticket;
     }
 

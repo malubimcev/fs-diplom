@@ -6,10 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
-    protected $fillable = ['price'];
+    protected $fillable = [
+        'seance_id',
+        'seat_id',
+        'qr_code'
+    ];
     protected $table = 'tickets';
 
-    public function session() {
+    private $ticket;
+
+    public function seance() {
         return $this->belongsTo('App\Seance', 'seance_id', 'id');
     }
 
@@ -18,6 +24,7 @@ class Ticket extends Model
     }
 
     public function test() {
-        return view('index');
+        $ticket = ['id' => '444'];
+        return $ticket;
     }
 }

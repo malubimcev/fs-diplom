@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Seance extends Model
 {
-    protected $fillable = ['hall_id', 'movie_id', 'start_time'];
+    protected $fillable = [
+        'hall_id',
+        'movie_id',
+        'start_time'
+    ];
     protected $table = 'seances';
 
     public function tickets() {

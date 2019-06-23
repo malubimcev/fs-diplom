@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hall extends Model
 {
-    protected $fillable = ['title', 'rows_count', 'seats_count', 'price', 'price_vip'];
+    protected $fillable = [
+        'title',
+        'rows_count',
+        'seats_count',
+        'price',
+        'price_vip'
+    ];
     protected $table = 'halls';
 
     public function seats() {
