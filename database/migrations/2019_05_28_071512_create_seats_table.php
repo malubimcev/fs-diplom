@@ -15,11 +15,11 @@ class CreateSeatsTable extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('hall_id')->unsigned();
+            $table->integer('hall_id')->unsigned()->default(0);
             $table->smallInteger('number')->default(1);
             $table->smallInteger('row_number')->default(1);
-            $table->boolean('is_vip');//->default('false');
-            $table->timestamps();
+            $table->boolean('is_vip')->default(false);
+            $table->timestamps('created_at')->nullable();
             $table->foreign('hall_id')->references('id')->on('halls')->onDelete('cascade');//->onUpdate('cascade');
         });
     }
