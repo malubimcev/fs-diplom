@@ -27,7 +27,6 @@ class TicketController extends Controller
     public function create(Generator $faker)
     {
         $ticket = new Ticket();
-
         $ticket->save();
         return response($ticket->jsonSerialize(), Response::HTTP_CREATED);
     }
@@ -42,7 +41,6 @@ class TicketController extends Controller
     {
         // $ticket = Ticket::create($request->all());
         $ticket = Ticket::create();
-        
         return $ticket;
     }
 
@@ -92,6 +90,6 @@ class TicketController extends Controller
     {
         $ticket = Ticket::findOrFail($id);
         $ticket->delete();
-        return '';        //
+        return '';
     }
 }

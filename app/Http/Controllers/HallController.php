@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Hall;
+use Illuminate\Http\Response;
+use Faker\Generator;
 
 class HallController extends Controller
 {
@@ -26,7 +28,10 @@ class HallController extends Controller
      */
     public function create()
     {
-        //
+        $hall = new Hall();
+        
+        $hall->save();
+        return response($hall->jsonSerialize(), Response::HTTP_CREATED);
     }
 
     /**
@@ -37,7 +42,9 @@ class HallController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $hall = Hall::create();
+        
+        return $hall;
     }
 
     /**
@@ -49,7 +56,6 @@ class HallController extends Controller
     public function show($id)
     {
         $hall = Hall::findOrFail($id);
-
         return $hall;
     }
 
@@ -73,7 +79,9 @@ class HallController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $hall = Hall::findOrFail($id);
+        $hall->update($request->all());
+        return $hall;
     }
 
     /**
@@ -84,6 +92,8 @@ class HallController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hall = Hall::findOrFail($id);
+        $hall->delete();
+        return '';
     }
 }

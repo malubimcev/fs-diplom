@@ -13,6 +13,7 @@ class Hall extends Model
         'price',
         'price_vip'
     ];
+    
     protected $table = 'halls';
 
     public function seats() {
