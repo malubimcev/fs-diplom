@@ -15,5 +15,8 @@ class Movie extends Model
     
     protected $table = 'movies';
 
+    public function seances() {
+        return $this->hasMany('App\Seance', 'movie_id', 'id');
+    }
 
 }
