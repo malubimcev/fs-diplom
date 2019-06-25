@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movie;
+use Illuminate\Http\Response;
+// use Faker\Generator;
 
 class MovieController extends Controller
 {
@@ -14,9 +16,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
-        return Movie::all();
-        // return 'all movies';//test
+        $movies = Movie::all();
+        return view('movies', compact('movies'));
     }
 
     /**
@@ -26,7 +27,13 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        $movie = new Movie();
+        $movie->title = 'movie_1';
+        $movie->description = 'description movie_1';
+        $movie->duration_time = gmdate("H:i:s", mktime(1, 30, 0, 1, 1, 1998));
+        $movie->image_link = 'img';
+        $movie->save();
+        return response($movie->jsonSerialize(), Response::HTTP_CREATED);
     }
 
     /**
@@ -37,7 +44,12 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $hall = Hall::create();
+        $movie->title = $request->title;
+        $movie->description = $request->description;
+        $movie->duration_time = $request->description;
+        $movie->image_link = $request->description;        
+        return $hall;
     }
 
     /**
@@ -48,7 +60,7 @@ class MovieController extends Controller
      */
     public function show($id)
     {
-        $movie = Movie::find($id);
+        $movie = Movie::findOrFail($id);
 
         return $movie;
     }
@@ -61,7 +73,7 @@ class MovieController extends Controller
      */
     public function edit($id)
     {
-        $movie = 'edited movie id=' . $id;//test
+        $movie = Movie::findOrFail($id);
 
         return $movie;
     }
@@ -75,7 +87,12 @@ class MovieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $movie = Movie::findOrFail($id);
+        $movie->title = $request->title;
+        $movie->description = $request->description;
+        $movie->duration_time = $request->description;
+        $movie->image_link = $request->description;
+        return $movie;
     }
 
     /**
