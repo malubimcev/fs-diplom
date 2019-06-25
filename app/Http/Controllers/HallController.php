@@ -56,7 +56,7 @@ class HallController extends Controller
     public function show($id)
     {
         $hall = Hall::findOrFail($id);
-        return $hall;
+        return view('hall', compact('hall'));
     }
 
     /**
