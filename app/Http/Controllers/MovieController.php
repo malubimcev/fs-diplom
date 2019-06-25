@@ -28,10 +28,6 @@ class MovieController extends Controller
     public function create()
     {
         $movie = new Movie();
-        $movie->title = 'movie_1';
-        $movie->description = 'description movie_1';
-        $movie->duration_time = gmdate("H:i:s", mktime(1, 30, 0, 1, 1, 1998));
-        $movie->image_link = 'img';
         $movie->save();
         return response($movie->jsonSerialize(), Response::HTTP_CREATED);
     }
@@ -62,7 +58,7 @@ class MovieController extends Controller
     {
         $movie = Movie::findOrFail($id);
 
-        return $movie;
+        return view('movie', compact('movie'));;
     }
 
     /**
