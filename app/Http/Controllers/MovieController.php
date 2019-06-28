@@ -17,7 +17,7 @@ class MovieController extends Controller
     public function index()
     {
         $movies = Movie::all();
-        return view('movies', compact('movies'));
+        return view('movies', compact(['movies']));
     }
 
     /**
@@ -40,11 +40,12 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        $hall = Hall::create();
+        $movie = Movie::create();
         $movie->title = $request->title;
         $movie->description = $request->description;
         $movie->duration_time = $request->description;
-        $movie->image_link = $request->description;        
+        $movie->image_link = $request->description;
+        $movie->save(); 
         return $hall;
     }
 
@@ -58,7 +59,7 @@ class MovieController extends Controller
     {
         $movie = Movie::findOrFail($id);
 
-        return view('movie', compact('movie'));;
+        return view('movie', compact('movie'));
     }
 
     /**
@@ -88,6 +89,7 @@ class MovieController extends Controller
         $movie->description = $request->description;
         $movie->duration_time = $request->description;
         $movie->image_link = $request->description;
+        $movie->save();
         return $movie;
     }
 
@@ -99,6 +101,6 @@ class MovieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $movie = Movie::findOrFail($id);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Seance;
+use Illuminate\Http\Response;
 
 class SeanceController extends Controller
 {
@@ -14,7 +15,8 @@ class SeanceController extends Controller
      */
     public function index()
     {
-        return Seance::all();
+        $seances = Seance::all();
+        return view('seances', compact('seances'));
     }
 
     /**
@@ -24,7 +26,9 @@ class SeanceController extends Controller
      */
     public function create()
     {
-        //
+        $seance = new Seance();
+        $seance->save();
+        return response($seance->jsonSerialize(), Response::HTTP_CREATED);
     }
 
     /**
@@ -35,7 +39,12 @@ class SeanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $seance = Seance::create();
+        $seance->hall_id = $request->hall_id;
+        $seance->movie_id = $request->movie_id;
+        $seance->start_time = $request->start_time;
+        $seance->save(); 
+        return $seance;
     }
 
     /**
@@ -46,7 +55,9 @@ class SeanceController extends Controller
      */
     public function show($id)
     {
-        //
+        $seance = Seance::findOrFail($id);
+
+        return view('seance', compact('seance'));
     }
 
     /**
@@ -57,7 +68,9 @@ class SeanceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $seance = Seance::findOrFail($id);
+
+        return $seance;
     }
 
     /**
@@ -69,7 +82,12 @@ class SeanceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $seance = Seance::findOrFail($id);
+        $seance->hall_id = $request->hall_id;
+        $seance->movie_id = $request->movie_id;
+        $seance->start_time = $request->start_time;
+        $seance->save(); 
+        return $seance;        
     }
 
     /**
@@ -80,6 +98,8 @@ class SeanceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $seance = Seance::findOrFail($id);
+        $seance->delete();
+        
     }
 }
