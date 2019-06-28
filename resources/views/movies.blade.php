@@ -1,5 +1,17 @@
 @extends('main')
 
+@section('css')
+    @include('client.css')
+@endsection
+
+@section('header')
+    @parent
+@endsection
+
+@section('nav')
+    @parent
+@endsection
+
 @section('content')
     <h1>MOVIES</h1>
     @foreach ($movies as $movie)
