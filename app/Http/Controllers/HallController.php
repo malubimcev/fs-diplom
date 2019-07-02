@@ -30,8 +30,8 @@ class HallController extends Controller
     {
         $hall = new Hall();
         
-        $hall->save();
-        return response($hall->jsonSerialize(), Response::HTTP_CREATED);
+        // $hall->save();
+        return $hall;//response($hall->jsonSerialize(), Response::HTTP_CREATED);
     }
 
     /**
@@ -43,7 +43,7 @@ class HallController extends Controller
     public function store(Request $request)
     {
         $hall = Hall::create();
-        
+        $hall->save($request->all());
         return $hall;
     }
 
