@@ -11,7 +11,8 @@ class Hall extends Model
         'rows_count',
         'seats_count',
         'price',
-        'price_vip'
+        'price_vip',
+        'is_open'
     ];
     
     protected $table = 'halls';
