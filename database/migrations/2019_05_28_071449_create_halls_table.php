@@ -20,6 +20,7 @@ class CreateHallsTable extends Migration
             $table->smallInteger('seats_count')->default(0)->unsigned();
             $table->double('price')->default(0);
             $table->double('price_vip')->default(0);
+            $table->boolean('is_open')->default(false);
             $table->timestamps();
         });
     }
