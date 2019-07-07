@@ -43,8 +43,8 @@ class MovieController extends Controller
         $movie = Movie::create();
         $movie->title = $request->title;
         $movie->description = $request->description;
-        $movie->duration_time = $request->description;
-        $movie->image_link = $request->description;
+        $movie->duration_time = $request->duration_time;
+        $movie->image_link = $request->image_link;
         $movie->save(); 
         return $hall;
     }
@@ -87,8 +87,8 @@ class MovieController extends Controller
         $movie = Movie::findOrFail($id);
         $movie->title = $request->title;
         $movie->description = $request->description;
-        $movie->duration_time = $request->description;
-        $movie->image_link = $request->description;
+        $movie->duration_time = $request->duration_time;
+        $movie->image_link = $request->image_link;
         $movie->save();
         return $movie;
     }
@@ -102,5 +102,7 @@ class MovieController extends Controller
     public function destroy($id)
     {
         $movie = Movie::findOrFail($id);
+        $movie->delete();
+        return true;
     }
 }
