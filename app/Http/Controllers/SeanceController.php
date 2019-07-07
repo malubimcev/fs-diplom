@@ -100,6 +100,6 @@ class SeanceController extends Controller
     {
         $seance = Seance::findOrFail($id);
         $seance->delete();
-        
+        return true;
     }
 }
